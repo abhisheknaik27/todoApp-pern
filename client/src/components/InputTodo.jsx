@@ -22,7 +22,7 @@ const InputTodo = () => {
     <div>
       <form
         onSubmit={submitTodo}
-        className="w-1/2 flex gap-2 border-2 border-gray-300 rounded-sm justify-between px-3 py-2 bg-gray-100"
+        className="flex gap-2 border-2 border-gray-300 rounded-sm justify-between px-3 py-2 bg-gray-100"
       >
         <input
           value={description}

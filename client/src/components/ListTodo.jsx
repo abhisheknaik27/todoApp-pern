@@ -32,61 +32,54 @@ const ListTodo = () => {
   };
   return (
     <>
-      <div className="mt-10 relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table className="w-full text-lg text-left rtl:text-right text-gray-500 ">
-          <thead className="text-sm text-white uppercase bg-green-800">
-            <tr>
-              <th scope="col" className="px-6 py-3">
-                Todo Description
-              </th>
-
-              <th scope="col" className="px-6 py-3"></th>
-              <th scope="col" className="px-6 py-3">
-                <span className="sr-only"></span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {todos.map((todo) => (
-              <tr
-                className="bg-green-300 border-b  hover:bg-green-100 hover:text-black"
-                key={todo.todo_id}
-              >
-                <th
-                  scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
-                >
-                  {todo.description}
+      {todos.length > 0 && (
+        <div className="mt-10 w-3/4 relative overflow-x-auto shadow-md rounded-lg">
+          <table className="w-full text-lg text-left rtl:text-right text-gray-500 ">
+            <thead className="text-sm text-white uppercase bg-green-800">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  Todo Description
                 </th>
 
-                <td className="px-6 py-4 text-center">
-                  <a
-                    href="#"
-                    className="font-medium text-blue-900  hover:underline"
-                  >
-                    <EditTodo todo={todo} />
-                  </a>
-                </td>
-                <td className="px-6 py-4 text-center align-middle">
-                  <button onClick={() => deleteTodo(todo.todo_id)}>
-                    <MdDelete className="text-xl text-red-500 mx-auto" />
-                  </button>
-                </td>
+                <th scope="col" className="px-6 py-3"></th>
+                <th scope="col" className="px-6 py-3">
+                  <span className="sr-only"></span>
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {todos.map((todo) => (
+                <tr
+                  className="bg-green-300 border-b  hover:bg-green-100 hover:text-black"
+                  key={todo.todo_id}
+                >
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
+                  >
+                    {todo.description}
+                  </th>
+
+                  <td className="px-6 py-4 text-center">
+                    <a
+                      href="#"
+                      className="font-medium text-blue-900  hover:underline"
+                    >
+                      <EditTodo todo={todo} />
+                    </a>
+                  </td>
+                  <td className="px-6 py-4 text-center align-middle">
+                    <button onClick={() => deleteTodo(todo.todo_id)}>
+                      <MdDelete className="text-[22px] text-red-400 mx-auto" />
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </>
-    // <div className="flex items-center gap-3 py-4">
-    //   <div className="">Description</div>
-    //   <div>
-    //     <FaEdit />
-    //   </div>
-    //   <div>
-    //     <MdDelete />
-    //   </div>
-    // </div>
   );
 };
 
