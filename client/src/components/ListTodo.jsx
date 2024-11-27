@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
+import EditTodo from "./EditTodo";
 
 const ListTodo = () => {
   const [todos, setTodos] = useState([]);
@@ -63,7 +64,7 @@ const ListTodo = () => {
                     href="#"
                     className="font-medium text-blue-900  hover:underline"
                   >
-                    Edit
+                    <EditTodo todo={todo} />
                   </a>
                 </td>
                 <td className="px-6 py-4 text-center align-middle">
