@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const EditTodo = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div>edit</div>;
+};
 
-export default EditTodo
+export default EditTodo;

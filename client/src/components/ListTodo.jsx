@@ -19,11 +19,14 @@ const ListTodo = () => {
     };
     fetchTodos();
   }, []);
-  const deleteTodo = async(todo_id) => {
+  const deleteTodo = async (id) => {
     try {
-        fetch("")
+      const deleteTodo = await fetch(`http://localhost:4000/todos/${id}`, {
+        method: "DELETE",
+      });
+      setTodos(todos.filter((todo) => todo.todo_id !== id));
     } catch (error) {
-        console.error(error.message);
+      console.error(error.message);
     }
   };
   return (
