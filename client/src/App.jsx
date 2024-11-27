@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import InputTodo from "./components/InputTodo";
 
 const App = () => {
   return (
-    <div>
-      
+    <div className="p-4">
+      <InputTodo />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
